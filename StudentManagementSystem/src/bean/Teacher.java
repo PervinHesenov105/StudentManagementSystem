@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package bean;
 
-/**
- *
- * @author Perfect
- */
+
 public class Teacher extends Person{
     private String schoolName;
     private double salary;
@@ -28,6 +22,10 @@ public class Teacher extends Person{
         this.salary = salary;
     }
 
+    @Override
+    public String toString() {
+        return "Name=" + getName() + ", Surname=" + getSurname()+", schoolName=" + schoolName + ", salary=" + salary;
+    }
    
     
     

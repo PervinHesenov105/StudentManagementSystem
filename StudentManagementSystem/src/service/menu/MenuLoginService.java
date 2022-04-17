@@ -4,6 +4,7 @@
  */
 package service.menu;
 
+import bean.Config;
 import java.util.Scanner;
 import service.menu.inter.MenuLoginServiceInter;
 
@@ -25,6 +26,8 @@ public class MenuLoginService implements MenuLoginServiceInter {
         if(!(username.equals("perfect")&&password.equals("123"))){
             throw new IllegalArgumentException("Username or password is invalid");
         }
+        
+        Config.setLoggedIn(true);
     }
 
 }

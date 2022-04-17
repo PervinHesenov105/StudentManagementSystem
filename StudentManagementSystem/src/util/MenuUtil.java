@@ -5,16 +5,15 @@ import java.util.Scanner;
 
 public class MenuUtil {
 
-    public static Menu showMenu() {
+    public static void showMenu() {
         System.out.println("Please select menu:");
         Menu.showAllMenu();
         Scanner sc = new Scanner(System.in);
-        int selectedMenu = sc.nextInt();
+        int selectedMenuNumber = sc.nextInt();
 
-        return Menu.find(selectedMenu);
+        Menu selectedMenu = Menu.find(selectedMenuNumber);
+        selectedMenu.process();
     }
 
-    public static void processMenu(Menu menu) {
-        menu.process();
-    }
+ 
 }
