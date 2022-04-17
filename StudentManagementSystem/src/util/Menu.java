@@ -4,8 +4,12 @@
  */
 package util;
 
+import service.menu.MenuAddStudentService;
+import service.menu.MenuAddTeacherService;
 import service.menu.MenuLoginService;
 import service.menu.MenuRegisterService;
+import service.menu.MenuShowStudentService;
+import service.menu.MenuShowTeacherService;
 import service.menu.inter.MenuService;
 
 /**
@@ -15,10 +19,10 @@ import service.menu.inter.MenuService;
 public enum Menu {
     LOGIN(1,"Login",new MenuLoginService()),
     REGISTER(2,"Register",new MenuRegisterService()),
-    ADD_TEACHER(3,"Add teacher",null),
-    ADD_STUDENT(4,"Add student",null),
-    SHOW_ALL_TEACHER(5,"Show teachers",null),
-    SHOW_ALL_STUDENT(6,"Show students",null),
+    ADD_TEACHER(3,"Add teacher",new MenuAddTeacherService()),
+    ADD_STUDENT(4,"Add student",new MenuAddStudentService()),
+    SHOW_ALL_TEACHER(5,"Show teachers",new MenuShowTeacherService()),
+    SHOW_ALL_STUDENT(6,"Show students",new MenuShowStudentService()),
     UNKNOWN;
     
     private String label;
@@ -45,6 +49,7 @@ public enum Menu {
     
     public void process(){ 
         service.process();
+        MenuUtil.showMenu();
     }
 
     public int getNumber() {
